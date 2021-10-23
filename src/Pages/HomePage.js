@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Posts from "../Components/Posts";
 import { Link } from "react-router-dom";
+import "../Assets/Styles/Styles.css";
 
 function HomePage() {
   const [posts, setPosts] = useState([]);
@@ -20,12 +21,14 @@ function HomePage() {
   return (
     <div>
       <h1>Posts</h1>
-      {posts.map((post) => (
-        <div>
-          <Posts post={post} key={post._id} />
-          <Link to={"/" + post._id}>See Post</Link>
-        </div>
-      ))}
+      <section className="postGrid">
+        {posts.map((post) => (
+          <div className="postCard">
+            <Posts post={post} key={post._id} />
+            <Link to={"/" + post._id}>See Post</Link>
+          </div>
+        ))}
+      </section>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Posts from "../Components/Posts";
 import { Link } from "react-router-dom";
 import Comments from "../Components/Comments";
+import "../Assets/Styles/Styles.css";
 
 function FullPost(e) {
   const urlId = e.match.params.id;
@@ -41,8 +42,7 @@ function FullPost(e) {
     })
       .then((res) => res.json())
       .then(
-        (result) => {
-        },
+        (result) => {},
         (error) => {
           console.log(error);
         }
@@ -81,11 +81,12 @@ function FullPost(e) {
     <div>
       <h1>Posts</h1>
       <Posts post={data} key={data._id} />
+      <p>{data.content} </p>
       <section>
         <h2>New Comment</h2>
         <form onSubmit={handleSubmitComment}>
           <label>Author</label>
-          <input type="text" label="username" name="username" value={form.username} onChange={handleChange} required/>
+          <input type="text" label="username" name="username" value={form.username} onChange={handleChange} required />
           <label>Comment</label>
           <textarea type="text" label="content" name="content" value={form.content} onChange={handleChange} required></textarea>
           <input type="submit" value="Send Comment" />

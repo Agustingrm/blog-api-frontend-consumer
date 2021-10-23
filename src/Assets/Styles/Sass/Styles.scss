@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+body {
+  color: black;
+  background-image: url("../Images/background.png");
+  font-family: "Open Sans", sans-serif;
+}
+
+.postGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+}
+
+.postCard {
+  background-color: rgb(247, 247, 247);
+  width: 250px;
+  height: 150px;
+  padding: 10px;
+  margin: 10px;
+  border: rgb(119, 119, 119) 1px solid;
+  border-radius: 10px;
+  box-shadow: rgb(65, 65, 65) 10px 10px 10px;
+  .bold {
+    font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+    float: right;
+    color: black;
+    font-weight: 600;
+  }
+}
